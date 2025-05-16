@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assurance de Voiture</title>
+    <link rel="stylesheet" href="sinisters.css">
+    <style>
+        /* Masquer le bouton par défaut */
+        .btn-payment {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="goBack()"></button>
+
+    <header>
+        <h1>Assurance de Voiture</h1>
+    </header>
+    <main>
+        <section id="assurance">
+            <form id="assurance-form" onsubmit="handleFormSubmit(event)">
+                <h3>Détails du véhicule et de l'assurance</h3>
+                
+                <label for="conducteur">Nom du conducteur:</label>
+                <input type="text" id="conducteur" name="conducteur" required>
+
+                <label for="marque">Marque du véhicule:</label>
+                <input type="text" id="marque" name="marque" required>
+
+                <label for="modele">Modèle du véhicule:</label>
+                <input type="text" id="modele" name="modele" required>
+
+                <label for="immatriculation">Numéro d'immatriculation:</label>
+                <input type="text" id="immatriculation" name="immatriculation" required>
+
+                <label for="chassis">Numéro de châssis:</label>
+                <input type="text" id="chassis" name="chassis" required>
+
+                <label for="assurance-compagnie">Nom de la compagnie d'assurance:</label>
+                <input type="text" id="assurance-compagnie" name="assurance-compagnie" required>
+
+                <label for="police">Numéro de police d'assurance:</label>
+                <input type="text" id="police" name="police" required>
+
+                <label for="croquis">Croquis:</label>
+                <input type="file" id="croquis" name="croquis" accept="image/*">
+
+                <label for="temoins">Déclaration des témoins:</label>
+                <textarea id="temoins" name="temoins"></textarea>
+
+                <button type="submit">Déclarer l'assurance</button>
+            </form>
+        
+            <script>
+                function handleFormSubmit(event) {
+                    event.preventDefault(); // Empêche l'envoi par défaut du formulaire
+                    alert("Formulaire soumis avec succès !");
+                    
+                    // Affiche le bouton "payment en ligne"
+                    document.querySelector('.btn-payment').style.display = 'inline-block';
+                }
+
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+        </section>
+    </main>
+    <a href="index.html" class="btn-back">Retour à l'accueil</a>
+    <br> <a href="cartedor.html" class="btn-payment">Payment en ligne</a></br>
+    <footer>
+        <p>&copy; 2024 Application de gestion</p>
+    </footer>
+</body>
+</html>
